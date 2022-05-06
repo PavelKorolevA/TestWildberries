@@ -17,7 +17,7 @@ public class TestBase {
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.baseUrl = "https://www.wildberries.ru/";
         Configuration.browserSize = "1920x1080";
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.remote = "https://" + getWebRemoteDriverUser() + ":" + getWebRemoteDriverPassword() + "@" + System.getProperty("remote.browser.url");
