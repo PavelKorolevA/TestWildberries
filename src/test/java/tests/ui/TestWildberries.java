@@ -1,21 +1,21 @@
-package tests;
+package tests.ui;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class TestWildberries {
+public class TestWildberries extends TestBase {
     @Test
     @DisplayName("Проверка Wildberries в хедере")
     void testLogotipWildberries() {
         step("Открыть главную страницу", () -> {
-            open(baseUrl);
+            open("");
         });
         step("Проверить наличие надписи Wildberries в хедере", () -> {
             $(".header").should(text("Wildberries"));
