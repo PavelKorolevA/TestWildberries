@@ -27,7 +27,7 @@ public class TestWildberries extends TestBase {
     void testKatalog(){
 
         step("Открыть главную страницу", () -> {
-            open(baseUrl);
+            open("");
         });
         step("Кликнуть на кнопку Каталог", () -> {
             $(".nav-element__burger").click();
