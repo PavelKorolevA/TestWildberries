@@ -15,7 +15,7 @@ public class TestWildberries extends TestBase {
     @DisplayName("Проверка Wildberries в хедере")
     void testLogotipWildberries() {
         step("Открыть главную страницу", () -> {
-            open("");
+            open("https://www.wildberries.ru/");
         });
         step("Проверить наличие надписи Wildberries в хедере", () -> {
             $(".header").should(text("Wildberries"));
@@ -27,7 +27,7 @@ public class TestWildberries extends TestBase {
     void testKatalog(){
 
         step("Открыть главную страницу", () -> {
-            open("");
+            open("https://www.wildberries.ru/");
         });
         step("Кликнуть на кнопку Каталог", () -> {
             $(".nav-element__burger").click();
