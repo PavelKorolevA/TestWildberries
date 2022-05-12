@@ -1,9 +1,0 @@
-// Template
-java \
-"-DconfigFile=${PATH_TO_FILE}" \
--jar allure-notifications-4.1.jar
-
-// Local
-java \
-"-Dconfig.file=notifications/telegram_config.json" \
--jar notifications/allure-notifications-4.1.jar
