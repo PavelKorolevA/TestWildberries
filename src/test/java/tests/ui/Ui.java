@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import pages.WebPages;
+import testbase.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -14,16 +15,12 @@ import static com.codeborne.selenide.Configuration.browserSize;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Ui {
+public class Ui extends TestBase {
+
     WebPages webPages = new WebPages();
+
     private String
             searchString = "REDMOND";
-
-    @BeforeAll
-    static void beforeAll() {
-        baseUrl = "https://www.wildberries.ru/";
-        browserSize = "1920x1080";
-    }
 
     @Test
     @DisplayName("Проверка логотипа в хедере")
@@ -72,7 +69,7 @@ public class Ui {
                 .productClick()
                 .checkTitleProduct()
                 .basketAdd();
-        sleep(2000);
+                 sleep(2000);
         webPages
                 .goToTheBasket()
                 .checkBasketProduct();
