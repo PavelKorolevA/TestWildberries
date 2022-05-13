@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browserSize;
+import static config.ConfigHelper.getWebRemoteDriverPassword;
+import static config.ConfigHelper.getWebRemoteDriverUser;
 
 public class TestBase {
 
@@ -19,7 +21,8 @@ public class TestBase {
 
         baseUrl = "https://www.wildberries.ru/";
         browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+ //       Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://" + getWebRemoteDriverUser() + ":" + getWebRemoteDriverPassword() + "@" + System.getProperty("remote.browser.url");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
