@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import pages.WebPages;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -14,6 +15,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Ui {
+    WebPages webPages = new WebPages();
+    private String
+            searchString = "REDMOND";
 
     @BeforeAll
     static void beforeAll() {
@@ -24,71 +28,53 @@ public class Ui {
     @Test
     @DisplayName("Проверка логотипа в хедере")
     void testLogotip() {
-
-        open(baseUrl);
-
-        $(".j-header").should(text("Wildberries"));
+        webPages
+                .openPage();
     }
 
     @Test
     @DisplayName("Каталог")
     void testCatalog() {
-
-        open(baseUrl);
-
-        $("[data-wba-header-name=Catalog]").click();
-
-        $(By.linkText("Книги")).click();
-
-        $(".catalog-title").shouldHave(text("Книги"));
+        webPages
+                .openPage()
+                .openCatalog()
+                .selectSection()
+                .checkBook();
     }
 
     @Test
     @DisplayName("Поиск товара")
     void findTovar() {
-
-        open(baseUrl);
-
-        $("#searchInput").setValue("REDMOND").pressEnter();
-
-        $(".brand-custom-header__name").shouldHave(text("REDMOND"));
+        webPages
+                .openPage()
+                .searchField(searchString)
+                .checkRedmond();
     }
 
     @Test
     @DisplayName("Переход на страницу товара")
     void GoToProductPage() {
-
-        open(baseUrl);
-
-        $("#searchInput").setValue("REDMOND").pressEnter();
-
-        $(".brand-custom-header__name").shouldHave(text("REDMOND"));
-
-        $("#c38776931").click();
-
-        $(".same-part-kt__header").shouldHave(text("REDMOND / Пылесос-робот REDMOND RV-R150, Белый"));
+        webPages
+                .openPage()
+                .searchField(searchString)
+                .checkRedmond()
+                .productClick()
+                .checkTitleProduct();
     }
 
     @Test
     @DisplayName("Добавление товара в корзину")
     void AddToCart() {
-
-        open(baseUrl);
-
-        $("#searchInput").setValue("REDMOND").pressEnter();
-
-        $(".brand-custom-header__name").shouldHave(text("REDMOND"));
-
-        $("#c38776931").click();
-
-        $(".same-part-kt__header").shouldHave(text("REDMOND / Пылесос-робот REDMOND RV-R150, Белый"));
-
-        $(".same-part-kt__order").$(byText("Добавить в корзину")).click();
-
+        webPages
+                .openPage()
+                .searchField(searchString)
+                .checkRedmond()
+                .productClick()
+                .checkTitleProduct()
+                .basketAdd();
         sleep(2000);
-
-        $(".j-item-basket").click();
-
-        $("#body-layout").shouldHave(text(" Пылесос-робот REDMOND RV-R150, Белый, REDMOND"));
+        webPages
+                .goToTheBasket()
+                .checkBasketProduct();
     }
 }
