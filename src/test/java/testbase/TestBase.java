@@ -39,7 +39,6 @@ public class TestBase {
         Attaches.screenshotAs("Последний скриншот");
         Attaches.pageSource();
         Attaches.browserConsoleLogs();
-
         closeWebDriver();
         Attaches.addVideo();
 
