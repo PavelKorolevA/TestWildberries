@@ -52,6 +52,8 @@ gradle clean test
 ```
 clean
 test
+-Duser=${USER}
+-Dpassword=${PASSWORD}
 -Dremote.browser.url=${REMOTE_BROWSER_URL}
 ```
 
