@@ -8,10 +8,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browserSize;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static config.ConfigHelper.getWebRemoteDriverPassword;
 import static config.ConfigHelper.getWebRemoteDriverUser;
 
@@ -36,11 +38,13 @@ public class TestBase {
     }
     @AfterEach
     void addAttachments() {
+        String sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+
         Attaches.screenshotAs("Последний скриншот");
         Attaches.pageSource();
         Attaches.browserConsoleLogs();
-        Attaches.addVideo();
         closeWebDriver();
 
+        Attaches.addVideo(sessionId);
     }
 }
