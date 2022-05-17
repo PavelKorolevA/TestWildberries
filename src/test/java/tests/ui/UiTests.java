@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Configuration.browserSize;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Ui extends TestBase {
+public class UiTests extends TestBase {
 
     WebPages webPages = new WebPages();
 
