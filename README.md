@@ -74,5 +74,5 @@ test
 ## :film_projector: Видео примеры прохождения тестов
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="images/gif/">
+  <img title="Selenoid Video" src="images/video/2c87927ff764ab62.gif">
 </p>
