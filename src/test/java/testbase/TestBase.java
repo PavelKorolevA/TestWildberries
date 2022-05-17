@@ -36,6 +36,7 @@ public class TestBase {
     void allure() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
+
     @AfterEach
     void addAttachments() {
         String sessionId = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
