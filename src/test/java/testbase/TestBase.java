@@ -22,9 +22,9 @@ public class TestBase {
         baseUrl = "https://www.wildberries.ru/";
         browserSize = "1920x1080";
  //       Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        String login = System.getProperty("login");
+        String user = System.getProperty("user");
         String password = System.getProperty("password");
-        Configuration.remote = "https://" + login + ":" + password + "@" + System.getProperty("remoteBrowser");
+        Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
