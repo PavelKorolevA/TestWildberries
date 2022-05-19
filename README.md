@@ -54,7 +54,7 @@ clean
 test
 -Duser=${USER}
 -Dpassword=${PASSWORD}
--Dremote.browser.url=${REMOTE_BROWSER_URL}
+-DremoteBrowser=${REMOTE_BROWSER}
 ```
 
 ## :open_book: Allure отчет
