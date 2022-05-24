@@ -64,7 +64,7 @@ public class UiTests extends TestBase {
 
     @Test
     @DisplayName("Переход на страницу товара")
-    void GoToProductPage() {
+    void goToProductPage() {
         step("Открыть главную страницу", () -> {
             webPages
                     .openPage();
@@ -89,7 +89,7 @@ public class UiTests extends TestBase {
 
     @Test
     @DisplayName("Добавление товара в корзину")
-    void AddToCart() {
+    void addToCart() {
         step("Открыть главную страницу", () -> {
             webPages
                     .openPage();
