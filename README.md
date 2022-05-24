@@ -54,23 +54,23 @@ clean
 test
 -Duser=${USER}
 -Dpassword=${PASSWORD}
--Dremote.browser.url=${REMOTE_BROWSER_URL}
+-DremoteBrowser=${REMOTE_BROWSER}
 ```
 
 ## :open_book: Allure отчет
 - ### Главный экран отчета
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screenshots/allure_main_page.png">
+<img title="Allure Overview Dashboard" src="images/screenshots/allure_mainpage.png">
 </p>
 
 - ### Страница с проведенными тестами
 <p align="center">
-<img title="Allure Test Page" src="images/screenshots/allure_tests_page.png">
+<img title="Allure Test Page" src="images/screenshots/allure_testspage.png">
 </p>
 
 ## :robot: Отчет в Telegram
 <p align="center">
-<img title="Telegram notification message" src="images/screenshots/allure_telegram_bot.png">
+<img title="Telegram notification message" src="images/screenshots/allure_telegram.png">
 </p>
 
 ## :film_projector: Видео примеры прохождения тестов
