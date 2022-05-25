@@ -71,10 +71,3 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
-    
-    task ui_test(type: Test) {
-        useJUnitPlatform {
-            includeTags "uitest"
-        }
-    }
-}
