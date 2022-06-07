@@ -46,7 +46,7 @@ public class Attaches {
         InputStream videoInputStream = null;
         sleep(1000);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             try {
                 videoInputStream = videoUrl.openStream();
                 break;

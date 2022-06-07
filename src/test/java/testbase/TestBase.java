@@ -21,7 +21,6 @@ public class TestBase {
     static void beforeAll() {
         baseUrl = "https://www.wildberries.ru/";
         browserSize = "1920x1080";
- //       Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         String user = System.getProperty("user");
         String password = System.getProperty("password");
         Configuration.remote = "https://" + user + ":" + password + "@" + System.getProperty("remoteBrowser");
